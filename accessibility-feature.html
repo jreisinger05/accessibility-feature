@@ -82,29 +82,25 @@
             
             // Define a function to toggle themes
             function toggleTheme() {
-                document.body.classList.toggle('dark');
+                // Check if the body has the 'dark' class
+                const isDarkMode = document.body.classList.toggle('dark');
 
-                // Call the function when a button is clicked
-                console.log('Button clicked!')
-            ;}
+                // Save the current theme to localStorage
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+                console.log(`Theme set to: ${isDarkMode ? 'dark' : 'light'}`);
+            }
             
             button.addEventListener('click', toggleTheme);
 
-            // Save a value to localStorage
-            if (document.body.classList.toggle === 'dark') {
-                localStorage.setItem('theme', 'dark');
-            }
-            else {
-                localStorage.setItem('theme', 'light');
-            }
-
             // Retrieve the value
             const theme = localStorage.getItem('theme');
-            console.log(`The selected theme is: ${theme}`);
 
             if (theme === 'dark') {
-                document.body.classList.toggle('dark');
+                document.body.classList.add('dark');
             }
+
+            console.log(`The selected theme is: ${theme}`);
         </script>
     </body>
 
