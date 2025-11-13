@@ -90,6 +90,13 @@
             // Call the function when a button is clicked
             
             button.addEventListener('click', toggleTheme);
+
+            // Save a value to localStorage
+            localStorage.setItem('theme', 'dark');
+
+            // Retrieve the value
+            const theme = localStorage.getItem('theme');
+            console.log(`The selected theme is: ${theme}`);
         </script>
     </body>
 
